@@ -27,6 +27,10 @@ export const animate = (config, gameFrame, playerImage, canvasContext, spriteAni
     const spriteHeight = config.spriteHeight
     const staggerFrames = config.staggerFrames
 
+    if (animationName == null) {
+        animationName = config.initialAnimation
+    }
+
     canvasContext.clearRect(0,0, canvasWidth, canvasHeight);
 
     const animationSize = spriteAnimations.get(animationName).location.length;
